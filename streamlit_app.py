@@ -1,15 +1,19 @@
 import streamlit as st
 import ollama
 import base64
+import os
 
 st.set_page_config(page_title="Mental Health Chatbot")
 
+
 def get_base64(background):
-    with open(background,"rb") as f:
+    if not os.path.exists(background):
+        st.error(f"Error: {background} not found. Ensure the file is uploaded.")
+        return ""
+    with open(background, "rb") as f:
         data = f.read()
     return base64.b64encode(data).decode()
 
-bin_str = get_base64("assets/background.png")
 
 
 st.markdown(f"""
