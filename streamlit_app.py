@@ -15,34 +15,59 @@ class MentalHealthChatbot:
     def __init__(self):
         self.responses = {
             "greeting": [
-                "Namaste! Kaise ho aap?",
-                "Hello! Kaisa chal raha hai?",
-                "Hi! Aaj ka din kaisa ja raha hai?"
+                "Namaste! Kaise ho aap? Aaj kuch share karna chahenge?",
+                "Hello! Kaisa chal raha hai? Main aapki help ke liye hun",
+                "Hi! Aaj ka din kaisa ja raha hai? Kuch special hua kya?"
             ],
             "stress": [
-                "Main samajh sakti hun. Stress bohot common hai. Deep breathing try karo",
-                "Tension mat lo. Kuch relaxing activities try karte hain",
-                "Aapko stress feel ho raha hai? Chalo meditation karte hain"
+                "Main samajh sakti hun. Stress bohot common hai. Deep breathing try karo - 4 seconds in, 4 seconds out",
+                "Tension mat lo. Kuch relaxing activities try karte hain. Music sunna, walk pe jana, ya meditation help kar sakta hai",
+                "Aapko stress feel ho raha hai? Chalo meditation karte hain. Aankhen band karke deep breaths lo"
             ],
             "sad": [
-                "It's okay to feel sad. Baat share karna chahte ho?",
-                "Main hun na aapke saath. Kya hua?",
-                "Sadness temporary hai. Aap strong ho"
+                "It's okay to feel sad. Baat share karna chahte ho? Main sun rahi hun",
+                "Main hun na aapke saath. Kya hua? Kabhi kabhi baat share karne se dil halka ho jata hai",
+                "Sadness temporary hai. Aap strong ho. Kya aapko kisi se baat karni chahiye? Family ya friends?"
             ],
             "anxiety": [
-                "Anxiety normal hai. Deep breaths lo - 4 seconds in, 4 seconds out",
-                "Abhi present moment pe focus karo. Sab theek ho jayega",
-                "Anxiety ke time grounding exercises help karti hain"
+                "Anxiety normal hai. Deep breaths lo - 4 seconds in, 4 seconds out. Aap safe ho",
+                "Abhi present moment pe focus karo. Sab theek ho jayega. 5 cheezein batao jo aap dekh sakte ho",
+                "Anxiety ke time grounding exercises help karti hain. Apne surroundings pe focus karo"
             ],
             "happy": [
-                "Bahut accha! Khush rehna important hai",
-                "Your happiness makes me happy! Aisa hi positive rehna",
-                "That's great! Ye khushi barkarar rakho"
+                "Bahut accha! Khush rehna important hai. Kya special hua aaj?",
+                "Your happiness makes me happy! Aisa hi positive rehna. Celebration ka time hai!",
+                "That's great! Ye khushi barkarar rakho. Kya plan hai aage ka?"
+            ],
+            "work": [
+                "Work pressure common hai. Breaks lena important hai. Kya aap proper breaks le rahe ho?",
+                "Office mein kya situation hai? Sometimes prioritizing tasks help karta hai",
+                "Work-life balance zaroori hai. Aap apne liye time nikal rahe ho?"
+            ],
+            "family": [
+                "Family matters sensitive hote hain. Aap apni feelings share karna chahte ho?",
+                "Family ke saath communication important hai. Kya aap unse baat kar sakte ho?",
+                "Ghar ki situation ke bare mein baat karna chahte ho? Main sun rahi hun"
+            ],
+            "relationship": [
+                "Relationships mein ups and downs normal hain. Kya specific problem hai?",
+                "Communication key hai relationships mein. Aapne partner se baat ki?",
+                "Take your time to process feelings. Kya aap dono ne openly baat ki hai?"
+            ],
+            "health": [
+                "Health first priority honi chahiye. Regular exercise aur proper diet follow kar rahe ho?",
+                "Self-care bohot important hai. Kya aap apna dhyan rakh rahe ho?",
+                "Mental aur physical health connected hai. Koi specific health concerns hain?"
+            ],
+            "motivation": [
+                "Small steps bhi progress hai. Aap already bohot strong ho!",
+                "Har din ek naya opportunity hai. Aap kya achieve karna chahte ho?",
+                "Progress ki apni pace hoti hai. Khud pe vishwas rakho!"
             ],
             "default": [
-                "Main samajh nahi paayi. Aur detail mein batayenge?",
-                "Thoda aur explain kar sakte ho?",
-                "I'm here to listen. Aage bolo"
+                "Main samajh rahi hun. Aur batao, kya feel kar rahe ho?",
+                "Aapki baat sun rahi hun. Kuch specific share karna chahenge?",
+                "I'm here to listen. Aage bolo, main aapke saath hun"
             ]
         }
         self.history_file = "chat_history.json"
@@ -61,16 +86,26 @@ class MentalHealthChatbot:
 
     def analyze_mood(self, user_input):
         user_input = user_input.lower()
-        if any(word in user_input for word in ["hi", "hello", "namaste", "hey"]):
+        if any(word in user_input for word in ["hi", "hello", "namaste", "hey", "hii", "helo"]):
             return "greeting"
-        elif any(word in user_input for word in ["stress", "tension", "pareshan"]):
+        elif any(word in user_input for word in ["stress", "tension", "pareshan", "pressure", "load", "thak"]):
             return "stress"
-        elif any(word in user_input for word in ["sad", "dukhi", "upset"]):
+        elif any(word in user_input for word in ["sad", "dukhi", "upset", "depression", "udas", "dard"]):
             return "sad"
-        elif any(word in user_input for word in ["anxiety", "ghabrahat", "dar"]):
+        elif any(word in user_input for word in ["anxiety", "ghabrahat", "dar", "nervous", "panic", "worried"]):
             return "anxiety"
-        elif any(word in user_input for word in ["happy", "khush", "accha"]):
+        elif any(word in user_input for word in ["happy", "khush", "accha", "great", "wonderful", "amazing"]):
             return "happy"
+        elif any(word in user_input for word in ["office", "work", "job", "boss", "colleague", "career"]):
+            return "work"
+        elif any(word in user_input for word in ["family", "ghar", "parents", "mummy", "papa", "bhai", "behen"]):
+            return "family"
+        elif any(word in user_input for word in ["relationship", "boyfriend", "girlfriend", "partner", "love", "breakup"]):
+            return "relationship"
+        elif any(word in user_input for word in ["health", "bimari", "doctor", "medicine", "exercise", "diet"]):
+            return "health"
+        elif any(word in user_input for word in ["motivation", "inspire", "goal", "target", "achieve", "success"]):
+            return "motivation"
         return "default"
 
     def get_response(self, user_input):
@@ -95,7 +130,12 @@ class MentalHealthChatbot:
             "Har din ek naya mauka hai. Aap amazing ho!",
             "Aapke andar bahut potential hai. Believe in yourself!",
             "You are worthy of all good things. Khud pe bharosa rakho!",
-            "Aap jahan bhi ho, perfect position pe ho. Keep growing!"
+            "Aap jahan bhi ho, perfect position pe ho. Keep growing!",
+            "Aapki feelings valid hain. Feel them, accept them!",
+            "Aap apni journey ke hero ho. Keep shining!",
+            "Success aapka wait kar rahi hai. Keep moving forward!",
+            "Har problem ka solution hai. Aap solve kar sakte ho!",
+            "Your mental health matters. Take care of yourself!"
         ]
         return random.choice(affirmations)
 
