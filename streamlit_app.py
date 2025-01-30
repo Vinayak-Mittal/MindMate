@@ -9,7 +9,7 @@ def get_base64(background):
         data = f.read()
     return base64.b64encode(data).decode()
 
-bin_str = get_base64("background.png")
+bin_str = get_base64("path/to/background.png")
 
 
 st.markdown(f"""
