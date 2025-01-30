@@ -5,7 +5,7 @@ import os
 
 st.set_page_config(page_title="Mental Health Chatbot")
 
-
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 def get_base64(background):
     if not os.path.exists(background):
@@ -37,12 +37,15 @@ st.markdown(f"""
 st.session_state.setdefault('conversation_history',[])
 
 def generate_response(user_input):
-    st.session_state['conversation_history'].append({"role":"user", "content":user_input})
-
-    response = ollama.chat(model="llama3.1:8b", messages=st.session_state['conversation_history'])
-    ai_response= response['message']['content']
-
-    st.session_state['conversation_history'].append({"role":"assistant", "content":ai_response})
+    st.session_state['conversation_history'].append({"role": "user", "content": user_input})
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-4",  # Change to "gpt-3.5-turbo" if needed
+        messages=st.session_state['conversation_history']
+    )
+    
+    ai_response = response["choices"][0]["message"]["content"]
+    st.session_state['conversation_history'].append({"role": "assistant", "content": ai_response})
     return ai_response
 
 def generate_affirmation():
