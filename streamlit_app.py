@@ -23,9 +23,9 @@ class MentalHealthChatbot:
                 "Galli kahne ke kaam kam kara karo to"
             ],
             "sad": [
-                "Koi na sab hi h sad aap bhi raho "
+                "Koi na sab hi h sad ,aap bhi raho "
             ],
-            "depresed": [
+            "depression": [
                 "Chat se kud jao,Kuch nahi rakha jeeke"
             ],
             "anxiety": [
