@@ -90,7 +90,7 @@ class MentalHealthChatbot:
         elif any(word in user_input for word in ["stress", "tension", "pareshan", "pressure", "load", "thak"]):
             return "stress"
         elif any(word in user_input for word in ["sad", "dukhi", "upset", "depression", "udas", "dard"]):
-            return "sad"
+            return "depression"
         elif any(word in user_input for word in ["anxiety", "ghabrahat", "dar", "nervous", "panic", "worried"]):
             return "anxiety"
         elif any(word in user_input for word in ["happy", "khush", "accha", "great", "wonderful", "amazing"]):
