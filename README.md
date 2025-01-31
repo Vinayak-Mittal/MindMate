@@ -1,4 +1,4 @@
-# MindMate
+# MindMate 🤖
 # Mental Health Chatbot
 A chatbot that provides mental health resources and empathetic conversations, ensuring user privacy and offering tailored support.
 
