@@ -5,7 +5,7 @@ import random
 import os
 
 # Page configuration
-st.set_page_config(page_title="Hinglish Mental Health Chatbot")
+st.set_page_config(page_title="Mental Health Chatbot")
 
 # Initialize session state for conversation history
 if 'conversation_history' not in st.session_state:
@@ -20,14 +20,13 @@ class MentalHealthChatbot:
                 "Hi! Aaj ka din kaisa ja raha hai? Kuch special hua kya?"
             ],
             "stress": [
-                "Main samajh sakti hun. Stress bohot common hai. Deep breathing try karo - 4 seconds in, 4 seconds out",
-                "Tension mat lo. Kuch relaxing activities try karte hain. Music sunna, walk pe jana, ya meditation help kar sakta hai",
-                "Aapko stress feel ho raha hai? Chalo meditation karte hain. Aankhen band karke deep breaths lo"
+                "Galli kahne ke kaam kam kara karo to"
             ],
             "sad": [
-                "It's okay to feel sad. Baat share karna chahte ho? Main sun rahi hun",
-                "Main hun na aapke saath. Kya hua? Kabhi kabhi baat share karne se dil halka ho jata hai",
-                "Sadness temporary hai. Aap strong ho. Kya aapko kisi se baat karni chahiye? Family ya friends?"
+                "Koi na sab hi h sad aap bhi raho "
+            ],
+            "depresed": [
+                "Chat se kud jao,Kuch nahi rakha jeeke"
             ],
             "anxiety": [
                 "Anxiety normal hai. Deep breaths lo - 4 seconds in, 4 seconds out. Aap safe ho",
