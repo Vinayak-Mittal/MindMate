@@ -6,16 +6,56 @@ import random
 class MentalHealthChatbot:
     def __init__(self):
         self.responses = {
-            "hi": "Hello! How can I support you today?",
-            "hello": "Hi there! I'm here to talk if you need me.",
-            "how are you": "I'm just a bot, but I'm here to help you feel better!",
-            "i am feeling sad": "I'm sorry you're feeling this way. Want to talk about it?",
-            "i am feeling happy": "That's wonderful to hear! What's making you feel happy?",
-            "i am feeling anxious": "Anxiety can be tough. Try taking deep breaths. Want to share more?",
-            "thank you": "You're welcome! I'm here whenever you need to talk.",
-            "bye": "Take care! Remember, you're not alone.",
-            "help": "I'm here to listen and support. You can tell me how you're feeling."
-        }
+        "hi": "Hello! How can I support you today?",
+        "hello": "Hi there! I'm here to talk if you need me.",
+        "hey": "Hey! What’s on your mind?",
+        "how are you": "I'm here and ready to support you. How are *you* feeling today?",
+
+        "i am feeling sad": "I'm really sorry you're feeling this way. Want to talk more about it?",
+        "i feel sad": "Sadness is a natural emotion. I'm right here with you.",
+        "i am feeling down": "It's okay to have down days. I'm here to support you.",
+        "i feel hopeless": "I'm here for you. Would you like to talk about what's making you feel that way?",
+        "i feel lonely": "You’re not alone now. I'm here, and I care.",
+
+        "i am feeling happy": "That's awesome! Want to share what made your day better?",
+        "i feel happy": "That's great to hear! Keep holding on to that joy.",
+        "i feel good": "Nice! It’s so good to hear positive vibes.",
+        "i feel excited": "Yay! What’s got you excited today?",
+
+        "i am feeling anxious": "That sounds tough. Deep breaths can help. Want to chat about it?",
+        "i feel anxious": "It's totally okay to feel that way. I’m here for you.",
+        "i have anxiety": "You're not alone. Many people feel this too – I’m listening.",
+        "i'm nervous": "Nerves happen before big things. You're stronger than you think.",
+    
+        "i am feeling stressed": "Stress can really take a toll. Let’s try to work through it together.",
+        "i feel stressed": "Maybe a small break could help. Or just vent here if you'd like.",
+        "i am overwhelmed": "Take a breath. You don’t have to do everything at once.",
+        "i can't handle it": "It's okay to feel that way. Want to break things down together?",
+    
+        "i feel tired": "Rest is important. Maybe a short break or nap could help?",
+        "i am exhausted": "You've probably been doing a lot. Be kind to yourself.",
+        "i am mentally drained": "That's really hard. I'm proud of you for reaching out.",
+        
+        "thank you": "You're welcome! I'm glad I can be here for you.",
+        "thanks": "Anytime! Don’t forget you matter.",
+        "i appreciate you": "That means a lot. I'm always here to support you.",
+    
+        "bye": "Take care! Remember, you're stronger than you think.",
+        "goodbye": "Sending you positivity and strength. Come back anytime!",
+    
+        "help": "I'm here for you. Tell me how you’re feeling or what you need.",
+        "i need help": "You're not alone. I'm ready to listen and support you.",
+        "can you help me": "Of course! Tell me what's going on – I'm here for you.",
+    
+        "what should i do": "Let’s talk it through. What’s the situation you’re facing?",
+        "i feel stuck": "Sometimes we all get stuck. Talking about it can really help.",
+    
+        "i hate myself": "I'm really sorry you're feeling that way. You matter, and I'm here for you.",
+        "i want to cry": "Let it out – crying can help. I'm here with you.",
+        "i'm scared": "That sounds tough. You're safe here. Want to talk about it?",
+        "i'm okay": "That's good to hear. If anything changes, I’m right here."
+    }
+
 
     def get_response(self, user_input):
         user_input = user_input.lower()
@@ -25,8 +65,8 @@ class MentalHealthChatbot:
         return "I'm here to support you. Could you tell me more about what's on your mind?"
 
 # Streamlit App Layout
-st.set_page_config(page_title="MindMate Chatbot", page_icon="🧠", layout="centered")
-st.title("🧠 Mental Health Chatbot")
+st.set_page_config(page_title="MindMate", page_icon="🧠✨", layout="centered")
+st.title("🧠 MindMate(Apka buddy)")
 
 # 🌈 Custom CSS styling
 st.markdown(
@@ -105,18 +145,50 @@ if st.button("🎯 Daily Motivation"):
         "This too shall pass.",
         "Take a deep breath. You're doing great.",
         "Keep going, you're doing better than you think.",
-        "You are not alone. You matter."
+        "You are not alone. You matter.",
+        "Believe in yourself and all that you are.",
+        "Every day is a second chance.",
+        "You have the power to create change.",
+        "Progress, not perfection.",
+        "It’s okay to not be okay.",
+        "One step at a time.",
+        "Your feelings are valid.",
+        "You've survived 100% of your worst days.",
+        "Small progress is still progress.",
+        "You deserve happiness and peace.",
+        "Breathe. You’ve got this.",
+        "Take things one moment at a time.",
+        "Healing is not linear.",
+        "You are doing the best you can, and that's enough.",
+        "The sun will rise, and so will you."
     ]
+
     st.success(random.choice(motivational_quotes))
 
 if st.button("🏃 Fitness Tip"):
-    fitness_tips = [
-        "Take a short walk to clear your mind.",
-        "Stretch your body every hour if you're sitting long.",
+   fitness_tips = [
+       "Take a short walk to clear your mind.",
+       "Stretch your body every hour if you're sitting long.",
         "Drink water – your brain needs it too!",
         "Try 10 jumping jacks – it boosts mood!",
-        "Dance to your favorite song for 5 minutes!"
-    ]
+        "Dance to your favorite song for 5 minutes!",
+        "Do 5 minutes of deep breathing and light stretching.",
+        "Try holding a plank for 30 seconds.",
+        "Take the stairs instead of the elevator.",
+        "Do 10 squats – feel the energy rise!",
+        "Practice neck rolls to relieve tension.",
+        "Stand up and march in place for 1 minute.",
+        "Roll your shoulders back – posture matters!",
+        "Set a timer to move every 30 minutes.",
+        "Try wall-sits for 20 seconds – build strength.",
+        "Do a quick 5-minute yoga session.",
+        "Practice balance by standing on one foot for 30 seconds.",
+        "Stretch your wrists and fingers if you’ve been typing a lot.",
+        "Close your eyes and focus on slow breathing for a mental reset.",
+        "Put on a song and freestyle stretch to it.",
+        "Mindfully take 10 slow steps and feel each one."
+   ]
+
     st.info(random.choice(fitness_tips))
 
 
