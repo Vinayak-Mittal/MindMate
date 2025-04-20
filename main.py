@@ -166,9 +166,9 @@ if st.button("🎯 Daily Motivation"):
     st.success(random.choice(motivational_quotes))
 
 if st.button("🏃 Fitness Tip"):
-   fitness_tips = [
-       "Take a short walk to clear your mind.",
-       "Stretch your body every hour if you're sitting long.",
+    fitness_tips = [
+        "Take a short walk to clear your mind.",
+        "Stretch your body every hour if you're sitting long.",
         "Drink water – your brain needs it too!",
         "Try 10 jumping jacks – it boosts mood!",
         "Dance to your favorite song for 5 minutes!",
@@ -187,7 +187,7 @@ if st.button("🏃 Fitness Tip"):
         "Close your eyes and focus on slow breathing for a mental reset.",
         "Put on a song and freestyle stretch to it.",
         "Mindfully take 10 slow steps and feel each one."
-   ]
+    ]
     st.info(random.choice(fitness_tips))
 
 
