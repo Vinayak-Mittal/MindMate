@@ -188,8 +188,7 @@ if st.button("🏃 Fitness Tip"):
         "Put on a song and freestyle stretch to it.",
         "Mindfully take 10 slow steps and feel each one."
    ]
-
-st.info(random.choice(fitness_tips))
+    st.info(random.choice(fitness_tips))
 
 
 
