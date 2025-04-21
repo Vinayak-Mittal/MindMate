@@ -13,12 +13,14 @@ class MentalHealthChatbot:
 
         "i am feeling sad": "I'm really sorry you're feeling this way. Want to talk more about it?",
         "i feel sad": "Sadness is a natural emotion. I'm right here with you.",
+        "kya karu me":"just take a long breathe and tell me what happened exactly",
         "i am feeling down": "It's okay to have down days. I'm here to support you.",
         "i feel hopeless": "I'm here for you. Would you like to talk about what's making you feel that way?",
         "i feel lonely": "You’re not alone now. I'm here, and I care.",
 
         "i am feeling happy": "That's awesome! Want to share what made your day better?",
         "i feel happy": "That's great to hear! Keep holding on to that joy.",
+        "muje bhot tenssion ho rahi h":"just do a small run on your standing position",
         "i feel good": "Nice! It’s so good to hear positive vibes.",
         "i feel excited": "Yay! What’s got you excited today?",
 
